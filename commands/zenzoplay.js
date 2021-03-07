@@ -28,7 +28,7 @@ module.exports = {
    
     const zfisc = zfiurl.soundcloud; 
 
-    if (!zfiurl.yt && !zfiurl.soundcloud) return message.reply("This Unsupported Zenzo Forge Items (NFI), Make sure its Song URL for SoundCloud or YouTube using `yt` & `soundcloud` metadata?");  
+    if (!zfiurl.yt && !zfiurl.soundcloud && !zfiurl.ytpl && !zfiurl.soundcloudpl) return message.reply("This Unsupported Zenzo Forge Items (NFI), Make sure its Song URL for SoundCloud or YouTube using `yt` & `soundcloud` metadata?");  
       
     const serverQueue = message.client.queue.get(message.guild.id);
     if (!channel) return message.reply(i18n.__("play.errorNotChannel")).catch(console.error);
