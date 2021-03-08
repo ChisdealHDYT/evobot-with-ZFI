@@ -25,7 +25,8 @@ module.exports = {
     const { channel } = message.member.voice;
     const serverQueue = message.client.queue.get(message.guild.id);
 
-    let reszfi = await fetch('https://api.chisdealhd.co.uk/v1/zenzo/forge/item/'+args[0])
+    const search = args.join(" ");
+    let reszfi = await fetch('https://api.chisdealhd.co.uk/v1/zenzo/forge/item/'+search.replace(/ /g,"%20"))
     		let body = await reszfi.json();
                   
             	if (!args.length)
@@ -51,7 +52,6 @@ module.exports = {
     
     if (!zfiurl.ytpl && !zfiurl.soundcloudpl) return message.reply("This Unsupported Zenzo Forge Items (NFI), Make sure its Playlist for SoundCloud or YouTube using `ytpl` & `soundcloudpl` metadata?");
       
-    const search = args.join(" ");
     const pattern = /^.*(youtu.be\/|list=)([^#\&\?]*).*/gi;
     
     //if (zfiurl.yt) {
