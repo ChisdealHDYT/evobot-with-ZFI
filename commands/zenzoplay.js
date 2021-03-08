@@ -18,8 +18,8 @@ module.exports = {
   async execute(message, args) {
     const { channel } = message.member.voice;
 
-
-    let reszfi = await fetch('https://api.chisdealhd.co.uk/v1/zenzo/forge/item/'+args[0])
+    const search = args.join(" ");
+    let reszfi = await fetch('https://api.chisdealhd.co.uk/v1/zenzo/forge/item/'+search.replace(/ /g,"%20"))
     		let body = await reszfi.json();
     
     const zfiurl = JSON.parse(body[0].metadata);
@@ -46,7 +46,6 @@ module.exports = {
     if (!permissions.has("CONNECT")) return message.reply(i18n.__("play.missingPermissionConnect"));
     if (!permissions.has("SPEAK")) return message.reply(i18n.__("play.missingPermissionSpeak"));
 
-    const search = args.join(" ");
     const videoPattern = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
     const playlistPattern = /^.*(list=)([^#\&\?]*).*/gi;
     const scRegex = /^https?:\/\/(soundcloud\.com)\/(.*)$/;
