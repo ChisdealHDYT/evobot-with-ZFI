@@ -50,7 +50,7 @@ module.exports = {
     const playlistPattern = /^.*(list=)([^#\&\?]*).*/gi;
     const scRegex = /^https?:\/\/(soundcloud\.com)\/(.*)$/;
     const mobileScRegex = /^https?:\/\/(soundcloud\.app\.goo\.gl)\/(.*)$/;
-    const url = zfiurl.yt || zfiurl.soundcloud;
+    const url = zfiurl.audio;
     const urlValid = videoPattern.test(url);
 
     // Start the playlist if playlist url was provided
