@@ -55,7 +55,7 @@ module.exports = {
     const pattern = /^.*(youtu.be\/|list=)([^#\&\?]*).*/gi;
     
     //if (zfiurl.yt) {
-         const url = zfiurl.ytpl || zfiurl.soundcloudpl;
+         const url = zfiurl.audio;
     //} else if (zfiurl.soundcloud) {
     //     const url = zfiurl.soundcloud;
     //}        
