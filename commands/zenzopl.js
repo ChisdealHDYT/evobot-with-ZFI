@@ -46,11 +46,11 @@ module.exports = {
 
     const zfiurl = JSON.parse(body[0].metadata);
 	
-    const zfiyt = zfiurl.ytpl;        
+    const zfiyt = zfiurl.audio;        
    
-    const zfisc = zfiurl.soundcloudpl;                
+    const zfisc = zfiurl.audio;                
     
-    if (!zfiurl.ytpl && !zfiurl.soundcloudpl) return message.reply("This Unsupported Zenzo Forge Items (NFI), Make sure its Playlist for SoundCloud or YouTube using `ytpl` & `soundcloudpl` metadata?");
+    if (!zfiurl.audio && !zfiurl.audio) return message.reply("This Unsupported Zenzo Forge Items (NFI), Make sure its Playlist for SoundCloud or YouTube using `ytpl` & `soundcloudpl` metadata?");
       
     const pattern = /^.*(youtu.be\/|list=)([^#\&\?]*).*/gi;
     
